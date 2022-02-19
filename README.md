@@ -21,8 +21,9 @@ Confirm hotkeys - Y, Space, Enter.
 Cancel confirm - N, Esc, Backspace, Delete. 
 
 ## Installing and Running
+[Download](https://github.com/VladimirPal/mcChessCom/releases) latest release and load extension to the browser.  
 
-### Procedures:
+### Or Build from source:
 
 1. Check if your [Node.js](https://nodejs.org/) version is >= **14**.
 2. Clone this repository.

@@ -6,6 +6,8 @@ Works only with new "Play" interface!
 
 Inspired by pain from the topic https://www.chess.com/forum/view/livechess/move-confirmation
 
+<img width="640" alt="mcChessCom-screen" src="https://user-images.githubusercontent.com/555405/154779606-1939074a-2cf8-4099-a3d3-2f0293e0d9e0.png">
+
 Native integration, using internal API.  
 Fast toggle button on the right side panel(see screenshot).  
 

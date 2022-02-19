@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "mcChessCom - move confirmation for chess.com",
+  "description": "Move confirmation for chess.com",
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon-34.png"
+  },
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.chess.com/*"],
+      "js": ["contentInject.bundle.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["contentScript.bundle.js", "icon-128.png", "icon-34.png"],
+      "matches": ["*://*.chess.com/*"]
+    }
+  ]
+}

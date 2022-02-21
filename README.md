@@ -1,5 +1,9 @@
 <img src="src/assets/img/icon-128.png" width="64"/>
 
+## Download extension
+
+[Chrome Web Store](https://chrome.google.com/webstore/detail/mcchesscom-move-confirmat/hfckonpdalooejghjpbpimhcgighijck)
+
 # mcChessCom - move confirmation for chess.com
 Brings move confirmation in Live chess.  
 Works only with new "Play" interface!

@@ -38,7 +38,7 @@ function mcPlugin(boardEl, settings) {
     game.plugins.remove('mcPlugin');
   }
   const isAllowedGame =
-    gameId.includes('liveGame') || gameId === 'vs-personalities';
+    gameId.includes('liveGame') || gameId === 'vs-personalities' || gameId === 'single';
   const manageIconContainerId = 'confirm-move-manage-icon-container';
   const oldManageIconEl = document.getElementById(manageIconContainerId);
   if (oldManageIconEl) {
@@ -53,10 +53,7 @@ function mcPlugin(boardEl, settings) {
   try {
     const manageIconContainerEl = document.createElement('div');
     manageIconContainerEl.setAttribute('id', manageIconContainerId);
-    const controlsEl =
-      gameId === 'vs-personalities'
-        ? document.getElementsByClassName('layout-controls')[0]
-        : document.getElementById('board-layout-controls');
+    const controlsEl = document.getElementById('board-layout-controls');
     if (controlsEl) {
       controlsEl.appendChild(manageIconContainerEl);
       reactRender(
@@ -142,10 +139,15 @@ function mcPlugin(boardEl, settings) {
               confirmContainerEl.setAttribute('id', containerId);
 
               const targetEl = f({
-                try: () =>
-                  document
+                try: () => {
+                  const el = document
                     .getElementById('board-layout-player-bottom')
-                    .getElementsByClassName('player-tagline')[0],
+                    .getElementsByClassName('player-tagline')[0];
+                  if (el) {
+                    return el;
+                  }
+                  throw new Error('No target el');
+                },
                 catch: () =>
                   document
                     .getElementsByClassName('player-component')[1]

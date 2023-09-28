@@ -38,7 +38,8 @@ function mcPlugin(boardEl, settings) {
     game.plugins.remove('mcPlugin');
   }
   const isAllowedGame =
-    gameId.includes('liveGame') || gameId === 'vs-personalities' || gameId === 'single';
+    gameId.includes('liveGame') ||
+    ['vs-personalities', 'single', 'play-computer'].includes(gameId);
   const manageIconContainerId = 'confirm-move-manage-icon-container';
   const oldManageIconEl = document.getElementById(manageIconContainerId);
   if (oldManageIconEl) {

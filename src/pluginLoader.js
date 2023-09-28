@@ -1,5 +1,5 @@
 function pluginLoader(applyPlugin, settings) {
-  const boardEl = document.getElementsByTagName('chess-board')[0];
+  const boardEl = document.getElementsByTagName('wc-chess-board')[0];
   if (boardEl && boardEl.game) {
     const boardId = boardEl.id;
     const observer = new MutationObserver((e) => {
@@ -10,7 +10,7 @@ function pluginLoader(applyPlugin, settings) {
         (removedNode.id !== boardId || removedNode.id === 'board-blank')
       ) {
         setTimeout(() => {
-          const newBoardEl = document.getElementsByTagName('chess-board')[0];
+          const newBoardEl = document.getElementsByTagName('wc-chess-board')[0];
           applyPlugin(newBoardEl, settings);
         }, 200);
       }
